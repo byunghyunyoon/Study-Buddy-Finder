@@ -1,0 +1,24 @@
+<!doctype html>
+{% extends "SBFapp/topbar.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+<style>
+    body {
+        background-color: rgb(255, 242, 230);
+    }
+</style>
+
+<body>
+    <div class="row justify-content-center">
+        <div class="col-5 text-left"><br>
+            <h3 style="color: rgb(35, 45, 75)">Leave a comment</h3>
+            <form method="post">
+                {% csrf_token %}
+                {{form | crispy}}
+                <br>
+                <button type="submit" style="background-color: rgb(35, 45, 75);" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+    </div>
+</body>
+{% endblock %}
